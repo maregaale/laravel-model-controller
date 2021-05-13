@@ -12,8 +12,11 @@
   </head>
   <body>
     @foreach ($movies as $movie)
-      <p>{{$movie->title}}</p>
-        
+      <h2>Film - {{$movie->id}}:</h2>
+      <p>Titolo: {{$movie->title}}</p>
+      <p>Autore/i: {{$movie->author}}</p>
+      <p>Genere: {{$movie->genre}}</p>
+      <p>Trama: {{$movie->plot}}</p>
     @endforeach
   </body>
 </html>

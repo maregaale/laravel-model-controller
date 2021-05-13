@@ -18,9 +18,4 @@ class MovieController extends Controller
         return view('/pages/home', ['movies' => $movies]);
     }
 
-    public function getTitle() {
-        return $this->movies->title;
-    }
-
-
 }

@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// model
+use App\Movie;
+
+
 class MovieController extends Controller
 {
+    // metodi
     public function index() {
-        return view('/pages/home');
+        // query
+        $movies = Movie::all();
+
+        return view('/pages/home', ['movies' => $movies]);
     }
+
+    public function getTitle() {
+        return $this->movies->title;
+    }
+
+
 }

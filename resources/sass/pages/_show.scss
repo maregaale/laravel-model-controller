@@ -1,0 +1,29 @@
+.show_container {
+  h1 {
+    text-align: center;
+    color:grey;
+    padding: 80px 0;
+  }
+
+  .info {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    p {
+      margin-bottom: 40px;
+      color: grey;
+
+      span {
+        color: blue;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+
+    p:nth-child(2n) {
+      text-align: right;
+      
+    }
+  }
+}

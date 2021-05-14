@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Movies</title>
+
+    {{-- foglio di stile --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
   </head>
   <body>
-    @foreach ($movies as $movie)
-      <h2>Film - {{$movie->id}}:</h2>
-      <p>Titolo: {{$movie->title}}</p>
-      <p>Autore/i: {{$movie->author}}</p>
-      <p>Genere: {{$movie->genre}}</p>
-      <p>Trama: {{$movie->plot}}</p>
-    @endforeach
+
+    
+    <div class="index_container">
+
+      <h1>I nostri film</h1>
+
+      @foreach ($movies as $movie)
+      <div class="movie">
+
+        <h2>{{$movie->title}}:</h2>
+
+        <p><span>Autore/i:</span> {{$movie->author}}</p>
+        <p><span>Genere:</span> {{$movie->genre}}</p>
+        <p class="plot"><span>Trama:</span> {{$movie->plot}}</p>
+      </div>
+      @endforeach
+
+    </div>
   </body>
 </html>

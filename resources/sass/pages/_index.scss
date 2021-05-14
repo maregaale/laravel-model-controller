@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.index_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.7794468129048494) 0%, rgba(245,245,245,1) 100%);
+  padding-top: 50px; 
+
+  h1 {
+    text-align: center;
+    width: 100%;
+    color: coral;
+    margin-bottom: 50px; 
+  }
+
+  .movie {
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0, 0.15);
+
+    h2 {
+      text-align: center;
+    }
+
+    span {
+      color: red;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .plot {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 15;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

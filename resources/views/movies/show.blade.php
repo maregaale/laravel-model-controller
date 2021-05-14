@@ -21,6 +21,10 @@
           <p><span>Genere:</span> {{$movie->genre}}</p>
           <p><span>Trama:</span> {{$movie->plot}}</p>
         </div>
+
+        <div class="link_container">
+          <a href="{{route('movies.index')}}">Torna ai film</a>
+        </div>
       </div>
   </body>
 </html>

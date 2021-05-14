@@ -24,6 +24,10 @@
         <p><span>Autore/i:</span> {{$movie->author}}</p>
         <p><span>Genere:</span> {{$movie->genre}}</p>
         <p class="plot"><span>Trama:</span> {{$movie->plot}}</p>
+
+        <div class="link_container">
+          <a href="{{route('movies.show', ['movie' => $movie->id])}}">Scopri di più sul film</a>
+        </div>
       </div>
       @endforeach
 

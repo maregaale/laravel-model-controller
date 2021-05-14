@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MovieController@index')->name('homePage');
+Route::resource('movies', 'MovieController');

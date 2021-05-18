@@ -13,6 +13,7 @@
       @csrf
       @method('PUT')
 
+      {{-- stampa errori --}}
       @if ($errors->any())
       <div class="alert alert-danger">
         <ul>
@@ -22,6 +23,9 @@
         </ul>
       </div>
       @endif
+      {{-- /stampa errori --}}
+
+      
       <div class="form-group">
         <label for="title">Titolo</label>
         <input type="text" class="form-control" id="title" name="title" placeholder="Titolo" value="{{old('title') ? old('title') : $movie->title}}">

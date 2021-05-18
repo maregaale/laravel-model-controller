@@ -60,7 +60,7 @@ class MovieController extends Controller
         $newMovie->save();
 
         // ritorno
-        return redirect()->route('movies.index')->with('message', 'è stato appena ggiunto ' . $newMovie->title);
+        return redirect()->route('movies.index')->with('alert', 'è stato appena aggiunto il film ' . $newMovie->title);
 
     }
 
@@ -108,8 +108,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Movie $movie)
     {
-        //
+        $movie -> delete();
+
+        return redirect()->route('movies.index')->with('alert', 'il film ' . $movie->title . ' è stato eliminato');
     }
 }

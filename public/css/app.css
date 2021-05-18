@@ -10056,10 +10056,13 @@ h3 {
   text-decoration: none;
 }
 
+.show_container {
+  padding: 80px 0;
+}
 .show_container h1 {
   text-align: center;
   color: grey;
-  padding: 80px 0;
+  padding-bottom: 80px;
 }
 .show_container .info {
   max-width: 1000px;
@@ -10087,4 +10090,8 @@ h3 {
   border-radius: 5px;
   color: blue;
   text-decoration: none;
+}
+
+.create {
+  padding: 80px 0;
 }

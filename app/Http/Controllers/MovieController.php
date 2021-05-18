@@ -40,7 +40,28 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        // validazione
+        $request->validate([
+            'title' => 'required | string| max:100',
+            'author' => 'required | string| max:100',
+            'genre' => 'required | string| max:100',
+            'plot' => 'required|string',
+        ]);
+        
+        // istanza nuovo elemento
+        $newMovie = new Movie();
+        $newMovie->title = $data['title'];
+        $newMovie->author = $data['author'];
+        $newMovie->genre = $data['genre'];
+        $newMovie->plot = $data['plot'];
+
+        $newMovie->save();
+
+        // ritorno
+        return redirect()->route('movies.index')->with('message', 'è stato appena ggiunto ' . $newMovie->title);
+
     }
 
     /**

@@ -21,6 +21,7 @@ class MovieController extends Controller
         return view('movies.index', ['movies' => $movies]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,8 +30,8 @@ class MovieController extends Controller
     public function create()
     {
         return view('movies.create');
-
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -56,13 +57,12 @@ class MovieController extends Controller
         $newMovie->author = $data['author'];
         $newMovie->genre = $data['genre'];
         $newMovie->plot = $data['plot'];
-
         $newMovie->save();
 
-        // ritorno
+        // ritorno rotta
         return redirect()->route('movies.index')->with('alert', 'è stato appena aggiunto il film ' . $newMovie->title);
-
     }
+
 
     /**
      * Display the specified resource.
@@ -79,6 +79,7 @@ class MovieController extends Controller
         return view('movies.show', ['movie' => $movie]);
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -86,9 +87,10 @@ class MovieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Movie $movie)
-    {
+    {   
         return view('movies.edit', ['movie' => $movie]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -107,14 +109,14 @@ class MovieController extends Controller
             'plot' => 'required|string',
         ]);
 
-
         // istanza
         $data = $request->all();
         $movie -> update($data);
 
-        // ritorno
+        // ritorno rotta
         return redirect()->route('movies.index', $movie)->with('alert', 'il film ' . $movie->title . ' è stato modificato');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -126,6 +128,7 @@ class MovieController extends Controller
     {
         $movie -> delete();
 
+        // ritorno rotta
         return redirect()->route('movies.index')->with('alert', 'il film ' . $movie->title . ' è stato eliminato');
     }
 }
